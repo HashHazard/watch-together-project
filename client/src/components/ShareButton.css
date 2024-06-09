@@ -1,0 +1,19 @@
+.share-button {
+  display: flex;
+  align-items: center;
+  background-color: var(--primary); /* Change to your preferred color */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.share-button:hover {
+  background-color: var(--primary-dark); /* Change to your preferred hover color */
+}
+
+.share-icon {
+  margin-right: 8px;
+}
