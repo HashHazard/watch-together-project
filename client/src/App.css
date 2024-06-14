@@ -71,7 +71,7 @@ input {
   /* max-width: 1080px; */
   margin: auto;
   /* margin: 0 32px; */
-  padding: 20px 32px 20px 32px;
+  padding: 20px 48px 20px 48px;
   display: flex;
   justify-content: space-between;
   list-style-type: none;
@@ -140,16 +140,17 @@ input {
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
   /* overflow: hidden; */
   width: 100%;
-  max-width: 400px;
+  max-width: 600px;
+  /* max-width: 400px; */
 }
 .image-container {
-  padding: 0px 16px 0px 16px;
+  padding: 12px;
 
-  width: fit-content;
+  /* width: fit-content;
   position: relative;
   display: inline-block;
   margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 2rem; */
 }
 
 .play-button {
@@ -179,13 +180,24 @@ input {
   justify-content: center;
   align-items: center;
   /* border: 1px solid black; */
-  background-color: #d9afd9;
-  background-image: linear-gradient(0deg, #d9afd9 0%, #97d9e1 100%);
+  /* background-color: #d9afd9;
+  background-image: linear-gradient(0deg, #d9afd9 0%, #97d9e1 100%); */
+  background-image: linear-gradient(
+      -90deg,
+      rgba(15, 28, 36, 0.7),
+      rgba(15, 28, 36, 1)
+    ),
+    url("./assets/noise.svg");
+
+  background-color: #111e25;
+  box-shadow: 0px 6px 0px 0px;
   margin: 32px 32px 140px 32px;
   border-top-left-radius: 24px;
   border-top-right-radius: 24px;
   border-bottom-left-radius: 24px;
   border-bottom-right-radius: 120px;
+
+  color: var(--primary);
 }
 
 .hero-left {
@@ -193,14 +205,23 @@ input {
 }
 
 .hero-title {
-  font-size: 3rem;
-  font-weight: bolder;
-  color: var(--darkest);
+  font-size: 4rem;
+  font-family: var(--sans);
+  color: var(--white);
   margin-bottom: 24px;
+  font-weight: 600;
 }
-.hero p {
+.hero-content span {
+  font-style: italic;
+  font-weight: 500;
+}
+.hero-content {
   padding: 0px;
   max-width: 720px;
+  color: var(--white);
+  font-family: "Fraunces";
+  font-size: 1.3rem;
+  font-weight: 300;
   /* text-align: center; */
 }
 
@@ -271,11 +292,15 @@ input {
 .features h2 {
   padding: 0;
   margin: 16px;
-  font-size: 2.5rem;
+  font-size: 4rem;
+  font-family: var(--sans);
+  color: var(--white);
+  font-weight: 600;
 }
 
 .feature-list {
-  margin-top: 24px;
+  margin-top: 8rem;
+  margin-bottom: 8rem;
   display: flex;
   /* flex-direction: column; */
   gap: 20px;
@@ -285,7 +310,7 @@ input {
 
 .feature-list div {
   /* box-shadow: var(--shadow-elevation-low); */
-  border: 1px solid #cfcfcfd2;
+  /* border: 1px solid #cfcfcf42; */
   padding: 12px;
   width: 300px;
   height: 150px;
@@ -295,6 +320,20 @@ input {
   align-items: center;
   text-align: center;
   border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  /* box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px; */
+  /* box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset; */
+  font-family: var(--mono);
+  font-size: 1.2rem;
+  font-weight: 300;
+  transition: 0.5s;
+}
+.feature-list div:hover {
+  /* border: 1px solid #cfcfcf; */
+  color: var(--primary);
 }
 
 /* Player window */
@@ -320,28 +359,26 @@ input {
   min-height: 360px;
 }
 
-.chat-top{
-
+.chat-top {
 }
-.chat-messages{
+.chat-messages {
   flex-grow: 1;
   display: flex;
   flex-direction: column-reverse;
 }
 
-.send-message{
+.send-message {
   align-self: self-end;
 }
-.receive-message{
+.receive-message {
   align-self: self-start;
 }
-.system-message{
+.system-message {
   align-self: center;
   text-align: center;
 }
 
-.chat-input{
-
+.chat-input {
 }
 
 @media (min-width: 720px) {
@@ -360,6 +397,7 @@ input {
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
+    min-height: 70vh;
     /* border: 1px solid black; */
   }
   .image-container {

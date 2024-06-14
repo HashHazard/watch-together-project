@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
 html, body {
   height: 100%;
   margin: 0;
@@ -16,7 +18,23 @@ body {
   --dark: #393E46;
   --primary:#00ADB5;
   --primary-dark: #00575b;
-  --light: #EEEEEE;
+  /* --light: #EEEEEE; */
+  --light: #162630;
+
+  --test: #de0b70;
+  --black: #0f1c24;
+  --dkblue: #0d314b;
+  --plum: #4b0d49;
+  /* --hotmag: #ff17e4; */
+  --magenta: #de0b70;
+  /* --magenta: #e310cb; */
+  --hotmag: #900747;
+  --aqua: #86fbfb;
+  --white: #f7f8fa;
+
+  --sans: "Instrument Sans", sans-serif;
+  --mono: "Fraunces", monospace;
+
 
   --shadow-color: 0deg 0% 58%;
   --shadow-elevation-low:
@@ -45,7 +63,7 @@ body {
 
   color-scheme: light dark;
   /* color: rgba(255, 255, 255, 0.87); */
-  color: var(--dark);
+  color: var(--white);
   /* background-color: #242424; */
   background-color: var(--light);
 

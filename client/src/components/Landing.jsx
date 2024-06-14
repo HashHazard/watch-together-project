@@ -1,5 +1,5 @@
 import NavBar from "./NavBar";
-import cat from "./../assets/golden-cat.jpeg";
+import cat from "./../assets/vidplayer.png";
 import { Link, useNavigate } from "react-router-dom";
 import { FaPlay } from "react-icons/fa";
 import { IoIosPeople } from "react-icons/io";
@@ -46,18 +46,20 @@ const Landing = () => {
       <section className="hero">
         <div className="image-container">
           <img src={cat} alt="cat" className="image" />
-          <div className="play-button">
+          {/* <div className="play-button">
             <FaPlay className="play-icon" />
-          </div>
+          </div> */}
         </div>
         <div className="hero-left">
           <div>
             <p className="hero-title">Connect with friends</p>
-            <p>
-              And share the show, as you watch your favorite videos in perfect
-              flow! 🎥🌍👫
+            <p className="hero-content">
+              Share the show, as you watch your favorite videos in perfect flow!
+              🎥🌍👫
             </p>
-            <p>Instant access, no sign-up needed</p>
+            <p className="hero-content">
+              Instant access, <span>no sign-up</span> needed
+            </p>
           </div>
 
           <div onClick={handleCreateRoom} className="big-room-button">

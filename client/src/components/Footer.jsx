@@ -11,7 +11,10 @@ const Footer = () => {
           <span role="img" aria-label="love">
             ❤️
           </span>{" "}
-          by <a href="http://google.com">Shubham Kumar</a>
+          by{" "}
+          <a href="https://github.com/HashHazard/watch-together-project">
+            Shubham Kumar
+          </a>
         </p>
       </div>
     </footer>

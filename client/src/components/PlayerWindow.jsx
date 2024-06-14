@@ -5,6 +5,7 @@ import ProgressBar from "./ProgressBar";
 import SearchInput from "./SearchInput";
 import { FaPlay } from "react-icons/fa";
 import ShareButton from "./ShareButton";
+import { generateRandomRoomName } from "../services/RandomGen";
 
 import "@vidstack/react/player/styles/default/theme.css";
 import "@vidstack/react/player/styles/default/layouts/video.css";
@@ -38,10 +39,17 @@ const PlayerWindow = ({ socket }) => {
 
   const [url, setUrl] = useState("youtube/_cMxraX_5RE");
 
+  const [username, setUsername] = useState("");
+  const [messages, setMessages] = useState([]);
+  const [message, setMessage] = useState("");
+
   useEffect(() => {
     if (room) {
       console.log("Joining room:", room);
       socket.emit("joinRoom", room);
+
+      const name = generateRandomRoomName(3);
+      setUsername(name);
     }
 
     // get the time duration of live video
@@ -76,12 +84,18 @@ const PlayerWindow = ({ socket }) => {
       setIsLeader(true);
     });
 
+    socket.on("message", ({ name, message }) => {
+      console.log({ name, message });
+      setMessages((prevMessages) => [...prevMessages, { name, message }]);
+    });
+
     return () => {
       socket.off("currentState");
       socket.off("playPause");
       socket.off("seek");
       socket.off("assignLeader");
       socket.off("videoId");
+      socket.off("message");
     };
   }, [room]);
 
@@ -122,6 +136,11 @@ const PlayerWindow = ({ socket }) => {
       console.log("seeking to", number);
       socket.emit("seek", { room, timestamp: number });
     }
+  };
+
+  const handleSendChat = () => {
+    if (message) socket.emit("message", { room, name: username, message });
+    setMessage("");
   };
 
   return (
@@ -165,8 +184,23 @@ const PlayerWindow = ({ socket }) => {
             <div className="send-message">hi</div>
             <div className="receive-message">hello</div>
             <div className="system-message">New user has joined the room</div>
+            {console.log(messages)}
+            {messages.map((value, index) => {
+              const { name, message } = value;
+              if (name === username) {
+                <div className="send-message">{message}</div>;
+              }
+            })}
           </div>
-          <input className="chat-input" type="text" />
+          <div>
+            <input
+              className="chat-input"
+              type="text"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+            />
+            <button onClick={handleSendChat}>Send</button>
+          </div>
         </div>
       </div>
     </div>

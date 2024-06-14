@@ -1,8 +1,10 @@
 .footer {
-  background-color: var(--dark);
-  color: var(--light);
+  background-color: var(--primary-dark);
+  color: var(--white);
   text-align: center;
   padding: 10px 0;
+  font-size: 1rem;
+  font-family: var(--sans);
 }
 
 .footer-content {

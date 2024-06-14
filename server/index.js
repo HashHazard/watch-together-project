@@ -20,12 +20,10 @@ io.on("connection", (socket) => {
     socket.join(room);
     console.log(`User ${socket.id} joined room: ${room}`);
 
-    socket
-      .to(room)
-      .emit("message", {
-        name: "system",
-        message: "A new user has joined the room:",
-      });
+    socket.to(room).emit("message", {
+      name: "system",
+      message: "A new user has joined the room:",
+    });
 
     // creating when first user joins
     if (!videoState.has(room)) {
@@ -48,8 +46,8 @@ io.on("connection", (socket) => {
   });
 
   socket.on("message", ({ room, name, message }) => {
-    console.log(`received ${room} ${message}`);
-    io.to(room).emit("message", message);
+    console.log(`received ${room} ${name} ${message}`);
+    io.to(room).emit("message", { name, message });
   });
 
   // handle play and pause state
