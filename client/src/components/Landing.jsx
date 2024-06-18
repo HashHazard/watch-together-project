@@ -34,7 +34,8 @@ const Landing = () => {
             <li>
               <div
                 to="/watch"
-                className="create-room-button"
+                style={{ padding: "8px" }}
+                className="btn-grad"
                 onClick={handleCreateRoom}
               >
                 Create Room
@@ -62,7 +63,11 @@ const Landing = () => {
             </p>
           </div>
 
-          <div onClick={handleCreateRoom} className="big-room-button">
+          <div
+            onClick={handleCreateRoom}
+            className="btn-grad"
+            style={{ marginTop: "40px" }}
+          >
             Create a Room
           </div>
         </div>

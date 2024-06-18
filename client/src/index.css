@@ -18,8 +18,8 @@ body {
   --dark: #393E46;
   --primary:#00ADB5;
   --primary-dark: #00575b;
-  /* --light: #EEEEEE; */
-  --light: #162630;
+  --light: #EEEEEE;
+  /* --light: #162630; */
 
   --test: #de0b70;
   --black: #0f1c24;
@@ -34,29 +34,22 @@ body {
 
   --sans: "Instrument Sans", sans-serif;
   --mono: "Fraunces", monospace;
+  --inter: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 
+  --rdark: #121212;
+  --rlight-grey: #383838;
+  --rcyan: #3defe9;
+  --rgreen: #6bd968;
+  --ryellow: #fecc1b;
+  --rred: #f44250;
+  --rblue: #3992ff;
+  --rpurple: #d83bd2;
 
-  --shadow-color: 0deg 0% 58%;
-  --shadow-elevation-low:
-    0.7px 1px 1.4px hsl(var(--shadow-color) / 0.34),
-    1.2px 1.7px 2.3px -1.2px hsl(var(--shadow-color) / 0.34),
-    2.9px 4px 5.6px -2.5px hsl(var(--shadow-color) / 0.34);
-  --shadow-elevation-medium:
-    0.7px 1px 1.4px hsl(var(--shadow-color) / 0.36),
-    2.4px 3.3px 4.6px -0.8px hsl(var(--shadow-color) / 0.36),
-    6px 8.2px 11.4px -1.7px hsl(var(--shadow-color) / 0.36),
-    14.7px 20px 27.9px -2.5px hsl(var(--shadow-color) / 0.36);
-  --shadow-elevation-high:
-    0.7px 1px 1.4px hsl(var(--shadow-color) / 0.34),
-    4.3px 5.8px 8.1px -0.4px hsl(var(--shadow-color) / 0.34),
-    8px 10.9px 15.2px -0.7px hsl(var(--shadow-color) / 0.34),
-    13.1px 17.9px 25px -1.1px hsl(var(--shadow-color) / 0.34),
-    21px 28.6px 39.9px -1.4px hsl(var(--shadow-color) / 0.34),
-    32.8px 44.7px 62.4px -1.8px hsl(var(--shadow-color) / 0.34),
-    49.8px 67.9px 94.7px -2.1px hsl(var(--shadow-color) / 0.34),
-    73.4px 100px 139.6px -2.5px hsl(var(--shadow-color) / 0.34);
-
-
+  /* --boxshadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset; */
+  --boxshadow: rgba(152, 152, 152, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+ 
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -65,7 +58,7 @@ body {
   /* color: rgba(255, 255, 255, 0.87); */
   color: var(--white);
   /* background-color: #242424; */
-  background-color: var(--light);
+  background-color: var(--rdark);
 
 
  /* background-image: radial-gradient(circle, #210000, #1d0000, #180000, #120000, #090000); */

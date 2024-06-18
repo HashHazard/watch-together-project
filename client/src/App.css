@@ -111,11 +111,41 @@ input {
   transform: translateY(-2px);
 }
 
+.btn-grad {
+  background-image: linear-gradient(
+    to right,
+    #4cb8c4 0%,
+    #3cd3ad 51%,
+    #4cb8c4 100%
+  );
+  /* margin: 10px; */
+  cursor: pointer;
+  padding: 12px 24px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  /* box-shadow: 0 0 20px #eee; */
+  box-shadow: var(--boxshadow);
+  border-radius: 10px;
+  width: fit-content;
+  display: block;
+  font-weight: 500;
+}
+
+.btn-grad:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
 .big-room-button {
   width: fit-content;
   cursor: pointer;
   margin: 40px 0 30px 0;
   color: var(--light);
+
   font-weight: bold;
   font-size: large;
   background-color: var(--primary);
@@ -179,19 +209,14 @@ input {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* border: 1px solid black; */
-  /* background-color: #d9afd9;
-  background-image: linear-gradient(0deg, #d9afd9 0%, #97d9e1 100%); */
-  background-image: linear-gradient(
-      -90deg,
-      rgba(15, 28, 36, 0.7),
-      rgba(15, 28, 36, 1)
-    ),
-    url("./assets/noise.svg");
-
-  background-color: #111e25;
+  /* background-color: #222831; */
+  /* background-color: #E96479; */
+  background-image: url("./assets/image-bg.svg");
+  background-repeat: no-repeat;
+  /* background-size: auto; */
+  background-size: cover;
   box-shadow: 0px 6px 0px 0px;
-  margin: 32px 32px 140px 32px;
+  margin: 0px 32px 0px 32px;
   border-top-left-radius: 24px;
   border-top-right-radius: 24px;
   border-bottom-left-radius: 24px;
@@ -205,23 +230,26 @@ input {
 }
 
 .hero-title {
-  font-size: 4rem;
+  font-size: 4.5rem;
+  line-height: 1;
   font-family: var(--sans);
   color: var(--white);
   margin-bottom: 24px;
-  font-weight: 600;
+  font-weight: 900;
 }
 .hero-content span {
   font-style: italic;
-  font-weight: 500;
+  font-weight: 600;
+  color: var(--white);
 }
 .hero-content {
   padding: 0px;
   max-width: 720px;
-  color: var(--white);
+  color: var(--light);
   font-family: "Fraunces";
-  font-size: 1.3rem;
-  font-weight: 300;
+  font-size: 1.5rem;
+  font-weight: 400;
+
   /* text-align: center; */
 }
 
@@ -287,15 +315,16 @@ input {
   justify-content: center;
   align-items: center;
   margin-bottom: 140px;
+  margin-top: 140px;
 }
 
 .features h2 {
   padding: 0;
   margin: 16px;
-  font-size: 4rem;
+  font-size: 4.5rem;
   font-family: var(--sans);
   color: var(--white);
-  font-weight: 600;
+  font-weight: 900;
 }
 
 .feature-list {
@@ -320,15 +349,11 @@ input {
   align-items: center;
   text-align: center;
   border-radius: 12px;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
-    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-  /* box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px; */
-  /* box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
-    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
-    rgba(255, 255, 255, 0.08) 0px 1px 0px inset; */
+  background-color: var(--rlight-grey);
+  box-shadow: var(--boxshadow);
   font-family: var(--mono);
-  font-size: 1.2rem;
-  font-weight: 300;
+  /* font-size: 1.4rem; */
+  font-weight: 400;
   transition: 0.5s;
 }
 .feature-list div:hover {
@@ -397,7 +422,7 @@ input {
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
-    min-height: 70vh;
+    min-height: 80vh;
     /* border: 1px solid black; */
   }
   .image-container {
